@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EnemyMnager : MonoBehaviour
+public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private Asteroid asteroidPrefab;
 
@@ -31,6 +31,7 @@ public class EnemyMnager : MonoBehaviour
             {
                 SpawnAsteroid();
                 asteroidCount++;
+                Debug.Log("Bomba");
             }
         }
         Debug.Log(asteroidCount);

@@ -6,7 +6,7 @@ public class Asteroid : MonoBehaviour
 {
     public int size = 3;
 
-    public EnemyMnager gameManager;
+    public EnemyManager enemyManager;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +23,29 @@ public class Asteroid : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.tag); 
+        if (collision.CompareTag("Bullet")) 
+        {
+            //enemyManager.asteroidCount--;
+
+            Destroy(collision.gameObject);
+
+            if (size > 1)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    Asteroid newAsteroid = Instantiate(this, transform.position, Quaternion.identity);
+                    newAsteroid.size = size - 1;
+                    newAsteroid.enemyManager = enemyManager;
+                }
+            }
+
+
+            Destroy(gameObject);
+        }
     }
 }
