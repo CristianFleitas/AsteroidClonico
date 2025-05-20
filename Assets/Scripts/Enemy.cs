@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, enemyBulletSpawn.position, enemyBulletSpawn.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.linearVelocity = enemyBulletSpawn.right * bulletSpeed;
+        rb.velocity = enemyBulletSpawn.right * bulletSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

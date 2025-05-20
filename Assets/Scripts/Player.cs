@@ -39,7 +39,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (isAlive && isAccelerating)
         {
             shipRigidbody.AddForce(shipAcceleration * transform.up);
-            shipRigidbody.linearVelocity = Vector2.ClampMagnitude(shipRigidbody.linearVelocity, shipMaxVelocity);
+            shipRigidbody.velocity = Vector2.ClampMagnitude(shipRigidbody.velocity, shipMaxVelocity);
         }
     }
 
@@ -66,7 +66,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             Rigidbody2D bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 
-            Vector2 shipVelocity = shipRigidbody.linearVelocity;
+            Vector2 shipVelocity = shipRigidbody.velocity;
             Vector2 shipDirection = transform.up;
             float shipForwardSpeed = Vector2.Dot(shipVelocity, shipDirection);
 
@@ -76,7 +76,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
             }
 
             // si se añade la linea de velocidad de abajo se suma demasiado la velocidad diagonal
-            //bullet.linearVelocity = shipVelocity * shipForwardSpeed; 
+            //bullet.velocity = shipVelocity * shipForwardSpeed; 
 
             bullet.AddForce(bulletSpeed * transform.up, ForceMode2D.Impulse);
         }
