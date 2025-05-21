@@ -8,6 +8,7 @@ public class Asteroid : MonoBehaviour
    
     void Start()
     {
+        //Velocidad y movimiento del Asteroide
         transform.localScale = 0.5f * size * Vector3.one;
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -15,19 +16,21 @@ public class Asteroid : MonoBehaviour
         float spawnSpeed = Random.Range(4f - size, 5f - size);
         rb.AddForce(direction * spawnSpeed, ForceMode2D.Impulse);
 
+        //Sumar al contador de asteroides para saber si hay que cambiar de lvl
         enemyManager.asteroidCount++;
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        //Detector del daño de la bala
         if (collision.CompareTag("Bullet"))
         {
             enemyManager.asteroidCount--;
 
             Destroy(collision.gameObject);
 
+            //Matriosca del asteride
             if (size > 1)
             {
                 for (int i = 0; i < 2; i++)

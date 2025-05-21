@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        //Movimiento del Enemigo
         enemyRigibody = GetComponent<Rigidbody2D>();
         transform.localScale = 0.5f * size * Vector3.one;
 
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        //Cooldown del disparo del enemigo
         if (Time.time >= nextFireTime)
         {
             Shoot();

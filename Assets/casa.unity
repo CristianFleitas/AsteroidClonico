@@ -327,6 +327,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2051986928953550919, guid: 14b73751cf20ec4458c00240f512aec9, type: 3}
+      propertyPath: shipMaxVelocity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051986928953550919, guid: 14b73751cf20ec4458c00240f512aec9, type: 3}
+      propertyPath: shipAcceleration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2325145750626915183, guid: 14b73751cf20ec4458c00240f512aec9, type: 3}
       propertyPath: m_Name
       value: Player
