@@ -8,7 +8,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] private float shipRotationSpeed = 180f;
     [SerializeField] private float bulletSpeed = 8f;
 
-
     [Header("Object references")]
     [SerializeField] private Transform bulletSpawn;
     [SerializeField] private Rigidbody2D bulletPrefab;
@@ -45,16 +44,16 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void HandleShipAcceleration()
     {
-        isAccelerating = Input.GetKey(KeyCode.UpArrow);
+        isAccelerating = Input.GetKey(KeyCode.W);
     }
 
     private void HandleShipRotation()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(shipRotationSpeed * Time.deltaTime * transform.forward);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(-shipRotationSpeed * Time.deltaTime * transform.forward);
         }
