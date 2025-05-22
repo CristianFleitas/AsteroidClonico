@@ -5,9 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-    int points = 0;
-    public int Points { get => points; } //Encapsulación
     private void Awake()
     {
         if(Instance != null) //Evitar que se dupliquen entre scenes
@@ -17,10 +14,5 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject); //Se genera SOLO 1 instancia en toda la 
-    }
-
-    public void AddPoints(int value) //para varios enemigos
-    {
-        points += value;
     }
 }
