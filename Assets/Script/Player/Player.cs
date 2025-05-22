@@ -17,6 +17,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private Rigidbody2D bulletPrefab;
     [SerializeField] private GameObject bulletContainer;
 
+    [SerializeField] private Booster booster;
+    [SerializeField] private Armor armor;
+    [SerializeField] private Shield shield;
+
     private Rigidbody2D shipRigidbody;
     private bool isAlive = true;
     private bool isAccelerating = false;
