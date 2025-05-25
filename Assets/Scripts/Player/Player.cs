@@ -74,7 +74,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
                 shipForwardSpeed = 0;
             }
 
-            // si se añade la linea de velocidad de abajo se suma demasiado la velocidad diagonal
+            // si se aï¿½ade la linea de velocidad de abajo se suma demasiado la velocidad diagonal
             //bullet.velocity = shipVelocity * shipForwardSpeed; 
 
             bullet.AddForce(bulletSpeed * transform.up, ForceMode2D.Impulse);
